@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>haiku</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list class="haiku__info-form" *ngIf="!haiku || isChangingInfo" [@slideinout]>
+    <ion-list-header>Your Information</ion-list-header>
+    <ion-item>
+      <ion-label position="stacked">Name <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input required type="text" (input)="handleNameValue($event)"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Syllables in Your Name</ion-label>
+      <ion-select (ionChange)="handleSyllableValue($event)" placeholder="Number of Syllables">
+        <ion-select-option value="1">One</ion-select-option>
+        <ion-select-option value="2">Two</ion-select-option>
+        <ion-select-option value="3">Three</ion-select-option>
+        <ion-select-option value="4">Four</ion-select-option>
+        <ion-select-option value="5">Five</ion-select-option>
+        <ion-select-option value="6">Six</ion-select-option>
+
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Your Gender</ion-label>
+      <ion-select (ionChange)="handleGenderValue($event)" placeholder="Select One">
+        <ion-select-option value="f">Female</ion-select-option>
+        <ion-select-option value="m">Male</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <div class="haiku__button-container">
+    <ion-button class="haiku__button" [expand]="getExpanded()" color="primary" (click)="generateHaiku()"
+    [disabled]="!hasRequiredInfo()">
+    <span *ngIf="!haiku">Generate Haiku</span>
+    <span *ngIf="haiku">New Haiku</span>
+  </ion-button>
+  <ion-button *ngIf="haiku && !isChangingInfo" (click)="changeInfo()" >Change Info</ion-button>
+</div>
+
+
+  <ion-text class="haiku__poem">
+    <p> {{haiku?.line1}}</p>
+    <p> {{haiku?.line2}}</p>
+    <p> {{haiku?.line3}}</p>
+  </ion-text>
+
+  <app-social-share *ngIf="haiku"></app-social-share>
+
+</ion-content>

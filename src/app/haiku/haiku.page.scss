@@ -1,0 +1,16 @@
+.haiku{
+    &__button-container{
+        display:flex;
+        justify-content: space-around;
+    }
+    &__button{
+margin-top: 5px;
+margin-bottom: 5px;
+    }
+    &__poem{
+        text-align: center;
+    }
+    &__info-form{
+        height: 220px;
+    }
+}

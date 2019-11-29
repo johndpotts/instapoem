@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>limerick</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-list-header>Your Information</ion-list-header>
+    <ion-item>
+      <ion-label position="stacked">Name <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input required type="text" (input)="handleNameValue($event)"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Your Gender</ion-label>
+      <ion-select (ionChange)="handleGenderValue($event)" placeholder="Select One">
+        <ion-select-option value="f">Female</ion-select-option>
+        <ion-select-option value="m">Male</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-button class="limerick__button" expand="block" color="primary" (click)="generateLimerick()" [disabled]="!hasRequiredInfo()">Generate
+    Limerick</ion-button>
+
+
+
+  <ion-text class="limerick__poem">
+    <p> {{limerick?.line1}}</p>
+    <p> {{limerick?.line2}}</p>
+    <p> {{limerick?.line3}}</p>
+    <p> {{limerick?.line4}}</p>
+    <p> {{limerick?.line5}}</p>
+  </ion-text>
+
+  <app-social-share></app-social-share>
+</ion-content>

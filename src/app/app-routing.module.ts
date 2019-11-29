@@ -12,8 +12,16 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
-    path: 'list',
-    loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
+    path: 'limerick',
+    loadChildren: () => import('./limerick/limerick.module').then(m => m.LimerickPageModule)
+  },
+  {
+    path: 'haiku',
+    loadChildren: () => import('./haiku/haiku.module').then(m => m.HaikuPageModule)
+  },
+  {
+    path: 'settings',
+    loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
   }
 ];
 

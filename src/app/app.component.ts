@@ -16,10 +16,21 @@ export class AppComponent {
       url: '/home',
       icon: 'home'
     },
+
     {
-      title: 'List',
-      url: '/list',
-      icon: 'list'
+      title: 'Limerick',
+      url: '/limerick',
+      icon: 'flame'
+    },
+    {
+      title: 'Haiku',
+      url: '/haiku',
+      icon: 'infinite'
+    },
+    {
+      title: 'Settings',
+      url: '/settings',
+      icon: 'settings'
     }
   ];
 
