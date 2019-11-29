@@ -9,7 +9,7 @@
 
 <ion-content>
 
-  <ion-list>
+  <ion-list class="limerick__info-form" *ngIf="!limerick || isChangingInfo" [@slideinout]>
     <ion-list-header>Your Information</ion-list-header>
     <ion-item>
       <ion-label position="stacked">Name <ion-text color="danger">*</ion-text>
@@ -24,8 +24,14 @@
       </ion-select>
     </ion-item>
   </ion-list>
-  <ion-button class="limerick__button" expand="block" color="primary" (click)="generateLimerick()" [disabled]="!hasRequiredInfo()">Generate
-    Limerick</ion-button>
+  <div class="limerick__button-container">
+      <ion-button class="haiku__button" [expand]="getExpanded()" color="primary" (click)="generateLimerick()"
+      [disabled]="!hasRequiredInfo()">
+      <span *ngIf="!limerick">Generate Limerick</span>
+      <span *ngIf="limerick">New Limerick</span>
+    </ion-button>
+    <ion-button *ngIf="limerick && !isChangingInfo" (click)="changeInfo()" >Change Info</ion-button>
+  </div>
 
 
 
@@ -37,5 +43,5 @@
     <p> {{limerick?.line5}}</p>
   </ion-text>
 
-  <app-social-share></app-social-share>
+  <app-social-share *ngIf="limerick"></app-social-share>
 </ion-content>
