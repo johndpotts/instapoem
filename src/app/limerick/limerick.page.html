@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -25,12 +25,12 @@
     </ion-item>
   </ion-list>
   <div class="limerick__button-container">
-      <ion-button class="haiku__button" [expand]="getExpanded()" color="primary" (click)="generateLimerick()"
+      <ion-button class="haiku__button" [expand]="getExpanded()" color="secondary" (click)="generateLimerick()"
       [disabled]="!hasRequiredInfo()">
       <span *ngIf="!limerick">Generate Limerick</span>
       <span *ngIf="limerick">New Limerick</span>
     </ion-button>
-    <ion-button *ngIf="limerick && !isChangingInfo" (click)="changeInfo()" >Change Info</ion-button>
+    <ion-button *ngIf="limerick && !isChangingInfo" (click)="changeInfo()" color="tertiary">Change Info</ion-button>
   </div>
 
 

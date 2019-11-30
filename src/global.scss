@@ -26,33 +26,14 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 
-.app-icon{
-    height:22px;
-    width: 22px;
-    padding:2px;
-    margin-bottom: 2px;
+.bg-primary{
+    background-color: --ion-color-primary;
 }
-ion-icon {
-    &[class*="custom-"] {
-      mask-size: contain;
-      mask-position: 50% 50%;
-      mask-repeat: no-repeat;
-      background: currentColor;
-      width: 1em;
-      height: 1em;
-    }
-  
-    &[class*="custom-quill"] {
-      mask-image: url(./assets/icon/quill-pen.svg);
-    }
-    &[class*="custom-home"] {
-      mask-image: url(./assets/icon/home.svg);
-    }
-    &[class*="custom-tree"] {
-      mask-image: url(./assets/icon/tree.svg);
-    }
-    &[class*="custom-settings"] {
-        mask-image: url(./assets/icon/settings.svg);
-      }
-  
-  }
+
+.bg-secondary{
+    background-color: --ion-color-secondary;
+}
+
+.bg-tertiary{
+    background-color: --ion-color-tertiary;
+}

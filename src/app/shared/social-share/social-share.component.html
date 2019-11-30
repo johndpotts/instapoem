@@ -3,9 +3,8 @@
        <h3 class="social-share__title">Share Your Poem</h3>
       </ion-text>
 <div class="social-share__container">
-<ion-button><ion-icon name="logo-facebook"></ion-icon></ion-button>
-<ion-button><ion-icon name="logo-twitter"></ion-icon></ion-button>
-<ion-button><ion-icon name="logo-linkedin"></ion-icon></ion-button>
-<ion-button><ion-icon name="mail"></ion-icon></ion-button>
-<ion-button><ion-icon name="text"></ion-icon></ion-button>
+<ion-button (click)="shareViaFacebook()"><ion-icon name="logo-facebook"></ion-icon></ion-button>
+<ion-button (click)="shareViaTwitter()" ><ion-icon name="logo-twitter"></ion-icon></ion-button>
+<ion-button (click)="shareViaEmail()"><ion-icon name="mail"></ion-icon></ion-button>
+<ion-button (click)="shareViaSMS()"><ion-icon name="text"></ion-icon></ion-button>
 </div>

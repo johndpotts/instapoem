@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -37,12 +37,12 @@
     </ion-item>
   </ion-list>
   <div class="haiku__button-container">
-    <ion-button class="haiku__button" [expand]="getExpanded()" color="primary" (click)="generateHaiku()"
+    <ion-button class="haiku__button" [expand]="getExpanded()" color="secondary" (click)="generateHaiku()"
     [disabled]="!hasRequiredInfo()">
     <span *ngIf="!haiku">Generate Haiku</span>
     <span *ngIf="haiku">New Haiku</span>
   </ion-button>
-  <ion-button *ngIf="haiku && !isChangingInfo" (click)="changeInfo()" >Change Info</ion-button>
+  <ion-button *ngIf="haiku && !isChangingInfo" (click)="changeInfo()" color="tertiary">Change Info</ion-button>
 </div>
 
 
