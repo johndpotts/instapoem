@@ -81,7 +81,7 @@ export class LimerickService {
         line1: `${name} needed a front door for ${this.pronoun.possesive(type)} hall`,
         line2: `The replacement ${this.pronoun.second(type)} bought was too tall`,
         line3: `So ${this.pronoun.second(type)} hacked it and chopped it`,
-        line4: `IAnd carefully lopped it`,
+        line4: `And carefully lopped it`,
         line5: `And now the dumb thing is too small`
       },
     }
