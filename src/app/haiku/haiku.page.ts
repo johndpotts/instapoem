@@ -20,10 +20,7 @@ export class HaikuPage implements OnInit {
 
   ngOnInit() {
   }
-public handleSyllableValue(e){
-  this.syllables = e.target.value;
 
-}
   public handleNameValue(e) {
     this.name = e.target.value;
   }
@@ -33,13 +30,11 @@ public handleSyllableValue(e){
 
   hasRequiredInfo() {
     return this.name && this.name.length &&
-      this.gender && this.gender.length &&
-      this.syllables;
-  }
+      this.gender && this.gender.length;  }
 
   generateHaiku() {
     this.isChangingInfo = false;
-    this.haiku = this.haikuService.getHaiku(this.name, this.gender, this.syllables);
+    this.haiku = this.haikuService.getHaiku(this.name, this.gender);
   }
 
   changeInfo(){
